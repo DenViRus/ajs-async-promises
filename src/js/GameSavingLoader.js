@@ -1,15 +1,9 @@
 import { read } from "./reader.js";
 import { json } from "./parser.js";
+import { GameSaving } from "./GameSaving.js";
 
 export class GameSavingLoader {
   static load() {
-    class GameSaving {
-      constructor(data) {
-        this.id = data.id;
-        this.created = data.created;
-        this.userInfo = data.userInfo;
-      }
-    }
     return read()
       .then((response) => response)
       .then((response) => json(response))
